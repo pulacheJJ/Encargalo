@@ -1,0 +1,16 @@
+project_id = "encargalo"
+
+[auth]
+site_url = "encargalo://auth"
+additional_redirect_urls = ["encargalo://auth"]
+minimum_password_length = 8
+enable_signup = true
+
+[auth.email]
+enabled = true
+enable_confirmations = true
+
+[functions.dispatch-push]
+verify_jwt = false
+[functions.geocode]
+verify_jwt = false
