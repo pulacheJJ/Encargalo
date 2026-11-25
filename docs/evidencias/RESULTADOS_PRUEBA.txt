@@ -1,0 +1,79 @@
+ENCÁRGALO — RESULTADOS DE LA REVISIÓN
+Fecha de referencia: 25 de noviembre de 2026 (Perú).
+Código: pulacheJJ/Encargalo, commit 48984c193a966ae24d0d3c09ef24d34d12e7f8fd.
+
+COMPILACIÓN
+Se generó e instaló una APK debug con Flutter 3.29.3 / Dart 3.7.2,
+JDK 21, plataforma Android 35 y NDK 27.0.12077973. El motor Flutter
+incluido se dirige a x86_64, para el emulador de prueba.
+APK: 81.039.256 bytes. Su huella está en compilacion-y-capturas.json.
+Los 33 archivos Dart de lib/, pubspec.yaml y pubspec.lock coinciden
+con la copia revisada del repositorio.
+
+La copia de compilación utilizó una firma de desarrollo separada,
+Gradle 8.10.2 en distribución bin y un límite de memoria/worker menor.
+La firma de la APK publicada se conservó. La APK debug de esta revisión
+no es una actualización firmada con la identidad original del equipo.
+
+ENTORNO
+Emulador Android 15, API 35, aislado de BlueStacks y del AVD del usuario.
+Capturas PNG directas de 900 × 1600 píxeles. Cámara y coordenadas emuladas.
+El reloj del emulador estaba en UTC; las horas visibles pueden diferir de Perú.
+
+El primer inicio debug mostró un ANR por espera de foco de ventana.
+Al iniciar con el extra enable-impeller=false, la interfaz respondió
+y permitió continuar el recorrido. Se utilizó Skia en ese emulador.
+Esto registra el comportamiento observado; no demuestra la causa del ANR
+ni permite generalizar el resultado a todos los teléfonos.
+
+PRUEBAS AUTOMATIZADAS
+- Flutter: 51 aprobadas.
+- PostgreSQL aislado/PGlite: 15 aprobadas.
+- Análisis de lib/ y test/: una observación informativa por import
+  innecesario en test/redesign_layout_test.dart:2; sin errores del analizador.
+- Compilación: aprobada, con advertencias de herramientas/API obsoletas.
+Los registros de ejecución se adjuntan en esta carpeta.
+
+RECORRIDO VISUAL Y COMPROBACIÓN EN LA NUBE
+1. Acceso con las cuentas autorizadas de cliente y negocio: correcto.
+2. Creación de solicitud de Bordado para 10 unidades: correcto.
+3. Captura mediante la cámara emulada y adjunto al borrador: correcto.
+4. Lectura, revisión y confirmación de coordenadas emuladas: correcto.
+   Latitud -5.195000; longitud -80.617000; precisión reportada de 5 m.
+5. Cierre y reapertura de la aplicación: se conservaron foto y ubicación.
+6. Publicación en Supabase: se comprobaron solicitud, foto y punto de entrega.
+7. Consulta desde negocio: la solicitud y su foto fueron visibles;
+   la interfaz indicó que la entrega precisa se comparte con el negocio elegido.
+8. Cotización por S/ 250.00, adelanto cero: enviada desde el negocio.
+9. Recepción desde cliente y aceptación: correctas.
+10. Creación de pedido con estado Confirmado: comprobada en interfaz y servidor.
+    La solicitud quedó adjudicada y la cotización aceptada.
+
+REGISTRO CREADO
+Título: Prueba academica - 10 polos bordados.
+Negocio: Ruta 66. Importe del acuerdo: S/ 250.00. Estado final: Confirmado.
+Se conservó como ejemplo de prueba en las cuentas autorizadas.
+No se registró un pago ni se pasó a producción durante este recorrido visual.
+
+PROCEDENCIA DE LAS CAPTURAS
+- 03, 04, 05 y 06: APK release publicada v1.1.0, versión interna 1.1.0+4,
+  cuya huella SHA-256 coincidió con la entrega: 
+  C5BAC3FDB49622D1D2AB342315F65A1B9526C26929DFBAFAABE27FC8E9E3EBC7.
+  Cubren cámara emulada, ubicación, borrador reabierto y revisión de publicación.
+- 01, 02, 07, 08, 09, 10 y 11: APK debug compilada en esta revisión.
+  Cubren acceso, ambos roles, consulta de la solicitud, cotización y pedido.
+Todas se obtuvieron del emulador; sus archivos conservan los píxeles capturados.
+
+LÍMITES DE ESTA REVISIÓN
+- No se probaron cámara ni GPS de un teléfono físico.
+- No se verificó recepción push con la aplicación en segundo plano ni
+  la ejecución diferida bajo restricciones reales de batería/otra red.
+- No se recorrieron pagos, devoluciones o estados posteriores a Confirmado
+  en la interfaz; existen pruebas SQL aisladas para esas reglas.
+- No se probaron registro nuevo, confirmación o recuperación por correo.
+- No se realizó publicación en Google Play.
+- Los tests automatizados de hardware usan dobles, según sus propios fixtures.
+
+El paquete incluye únicamente documentación, registros y capturas seleccionadas.
+Las cuentas, contraseñas, sesiones, configuraciones locales y firmas privadas
+no forman parte del material de entrega.

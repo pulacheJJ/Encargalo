@@ -11,6 +11,7 @@ Proyecto del curso **Tecnología y Desarrollo Móvil**. Docente: **Taype Cruzado
 ## Contenido
 
 - [Funciones principales](#funciones-principales)
+- [Capturas de la aplicación](#capturas-de-la-aplicación)
 - [Instalar la aplicación](#instalar-la-aplicación)
 - [Cómo usar Encárgalo](#cómo-usar-encárgalo)
 - [Tecnologías](#tecnologías)
@@ -39,6 +40,24 @@ Proyecto del curso **Tecnología y Desarrollo Móvil**. Docente: **Taype Cruzado
 | Consultar pedidos, avisos e historial. | Consultar cotizaciones, pedidos y avisos. |
 
 La aplicación también incluye borradores locales, una cola de envíos pendientes, notificaciones push y registro de pagos y cancelaciones **simulados**. Los pagos sirven para representar adelanto, saldo, rechazo y devolución; no se transfiere dinero ni se conecta una billetera o tarjeta.
+
+## Capturas de la aplicación
+
+Capturas reales obtenidas en un emulador Android 15 con cuentas autorizadas.
+La foto procede de la cámara emulada y las coordenadas son simuladas.
+Se utilizaron la APK publicada y una compilación debug del mismo código;
+la procedencia de cada archivo y los resultados están en el
+[registro de la revisión](docs/evidencias/RESULTADOS_PRUEBA.txt).
+
+| Foto conservada al reabrir el borrador | Revisión del punto de entrega simulado |
+| --- | --- |
+| ![Borrador reabierto con foto y referencia](docs/capturas/05-borrador-reabierto.png) | ![Coordenadas y precisión de la ubicación simulada](docs/capturas/04-ubicacion-simulada.png) |
+
+| Cotización recibida por el cliente | Pedido creado después de aceptar |
+| --- | --- |
+| ![Cotización recibida](docs/capturas/10-cotizacion-recibida.png) | ![Pedido confirmado](docs/capturas/11-pedido-confirmado.png) |
+
+[Ver las 11 capturas](docs/capturas) · [Resultados y límites de las pruebas](docs/evidencias/RESULTADOS_PRUEBA.txt)
 
 ## Instalar la aplicación
 
@@ -299,6 +318,8 @@ npm test
 cd ..
 ```
 
+La revisión del 25/11/2026 ejecutó **51 pruebas Flutter y 15 pruebas SQL aisladas**, todas aprobadas. El análisis encontró un import innecesario en un archivo de pruebas. Consulta los [registros y resultados](docs/evidencias/RESULTADOS_PRUEBA.txt).
+
 Las pruebas incluyen dinero y estados, HTTP/JSON, separación entre cuentas, persistencia, cola, sesión segura, formularios y reglas comerciales. Las pruebas de PostgreSQL usan PGlite y preparan infraestructura de prueba; no se conectan al backend del producto. Las pruebas del editor usan dobles de cámara y ubicación.
 
 Para comprobar las funciones del dispositivo, realiza además este recorrido:
@@ -341,6 +362,7 @@ En Windows, [tools/build-android.ps1](tools/build-android.ps1) prepara una copia
 | El registro exige confirmar el correo o no llega la recuperación. | Revisa Auth, redirecciones, correo no deseado, configuración SMTP y límites de envío. |
 | El servidor rechaza el distrito. | Comprueba la carga del catálogo `public.locations` y que la solicitud pertenezca a Piura. |
 | “Buscar referencia del distrito” rechaza una ubicación seleccionable. | El catálogo es más amplio que la lista admitida por `geocode`; utiliza referencia manual o amplía esa lista. |
+| El inicio debug presenta un ANR en el emulador con gráficos por software. | En esta revisión se pudo continuar al iniciar con `enable-impeller=false`; con Flutter, la opción equivalente es `flutter run --no-enable-impeller --dart-define-from-file=config/public.json`. Revisa el resultado en tu dispositivo. |
 | No se obtiene ubicación. | Revisa permisos, servicio de ubicación y condiciones de recepción; en emulador, revisa su ubicación configurada. |
 | No llegan notificaciones. | Revisa permiso del dispositivo, activación de avisos, configuración Firebase, token, emisor y programación del servidor. |
 | Una operación continúa pendiente. | Consulta Sincronización. Verifica sesión, conectividad y mensaje del servidor antes de reenviar. |
@@ -351,7 +373,7 @@ En Windows, [tools/build-android.ps1](tools/build-android.ps1) prepara una copia
 
 La demostración debe mostrar cámara y ubicación dentro de una solicitud y continuar con el recorrido cliente → negocio → cotización → pedido. Explica qué hace el hardware, cómo se procesa el resultado y dónde se guarda.
 
-Para completar este apartado, añade capturas de la solicitud con foto, revisión del punto de entrega, cotización y seguimiento. Usa datos de prueba y registra si se trata de un teléfono físico o de un emulador. El equipo ha reportado una prueba satisfactoria del recorrido principal; las capturas y los datos del dispositivo deben acompañar esa evidencia.
+Las capturas del emulador se incluyen en [docs/capturas](docs/capturas). La revisión comprobó creación y publicación de la solicitud, foto, ubicación simulada, reapertura del borrador, cotización entre roles y pedido confirmado. Complementa este material con el video del equipo y las evidencias del teléfono físico. El alcance exacto de cada comprobación está en [RESULTADOS_PRUEBA.txt](docs/evidencias/RESULTADOS_PRUEBA.txt).
 
 Los informes y registros de la entrega anterior se conservan fuera del repositorio, en `../encargalo_documentacion/`. Para que el profesor pueda consultarlos desde GitHub, añade los materiales públicos al repositorio o publica un enlace accesible en este apartado.
 
@@ -363,7 +385,7 @@ Los informes y registros de la entrega anterior se conservan fuera del repositor
 - Unificar la cobertura del catálogo territorial y la búsqueda de referencias.
 - Añadir pruebas de integración del flujo completo y ejecución automática en GitHub.
 - Facilitar el inicio desde una copia limpia: versión de SDK fijada, configuración de firma para desarrollo y herramientas adaptables a otro backend.
-- Completar el video, las capturas y la documentación del proceso de publicación.
+- Completar el video, las evidencias en teléfono físico y la documentación del proceso de publicación.
 
 ## Colaboración y créditos
 
