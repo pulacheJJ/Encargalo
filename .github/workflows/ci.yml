@@ -1,0 +1,51 @@
+name: Integración continua
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  flutter:
+    name: Flutter 3.29.3 · análisis y pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.29.3
+          channel: stable
+          cache: true
+      - name: Dependencias del sistema (SQLite)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libsqlite3-dev
+      - name: Dependencias de Dart y Flutter
+        run: flutter pub get
+      - name: Análisis estático
+        run: flutter analyze
+      - name: Pruebas unitarias y de widgets
+        run: flutter test --reporter expanded
+
+  backend:
+    name: PostgreSQL aislado (pglite)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend-tests
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend-tests/package-lock.json
+      - name: Dependencias
+        run: npm ci
+      - name: Reglas y seguridad en PostgreSQL
+        run: npm test

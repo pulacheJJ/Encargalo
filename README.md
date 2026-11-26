@@ -28,10 +28,11 @@ Los pagos son una **simulación explícita**, con registro persistente, idempote
 - `supabase/migrations/`: esquema, restricciones, RLS, RPC, Storage privado, Realtime y caché de geocodificación.
 - `supabase/functions/`: emisor FCM HTTP v1 y proxy restringido a distritos de Piura.
 - `backend-tests/`: PostgreSQL WASM aislado para seguridad; no es un servidor del producto.
-- `test/`: moneda, JSON/HTTP, SQLite, migración, cola, hardware con dobles y accesibilidad del estado sin configuración.
+- `test/`: pruebas unitarias y de widgets, más `test/support/` (backend Supabase simulado y arnés de sesión) y `test/walkthrough_manual.dart`, el recorrido funcional completo que se ejecuta manualmente mientras termina de estabilizarse.
 - `assets/locations/`: 1.893 distritos, 25 regiones y licencia MIT del conjunto versionado; no son ubicaciones inventadas. La API del catálogo se consulta sin enviar direcciones personales a terceros.
 - `apk/`: APK instalable; no se mezclan informes o binarios de versiones anteriores.
 - `tools/`: scripts reproducibles de compilación, pruebas y despliegue, sin secretos incrustados.
+- `.github/workflows/ci.yml`: análisis y pruebas automáticas en GitHub con Flutter 3.29.3 y PostgreSQL aislado.
 
 La documentación académica, informes, evidencias, registros de ejecución y versiones anteriores se conservan **fuera del proyecto**, en `../encargalo_documentacion/`. Su separación no elimina los requisitos del `.txt`, incluida la prioridad de cámara/GPS y los cinco aportes opcionales del equipo. Las capas se organizan por capacidad; los límites de Auth, perfiles, catálogo y pagos tienen interfaces sustituibles en pruebas, y las reglas comerciales autoritativas se ejecutan en transacciones SQL, no en botones.
 
@@ -55,6 +56,28 @@ Pruebas PostgreSQL aisladas (desde `backend-tests/`):
 npm ci
 npm test
 ```
+
+## Pruebas automatizadas
+
+`flutter test` ejecuta las 51 pruebas unitarias y de widgets existentes. Además, `test/walkthrough_manual.dart` contiene cinco recorridos de integración que montan la app real (`EncargaloApp`) contra `test/support/fake_backend.dart`: un backend Supabase simulado con Auth, PostgREST y RPC, SQLite en memoria y preferencias en memoria. No requiere emulador, cuentas ni claves. Se ejecuta con:
+
+```powershell
+flutter test test/walkthrough_manual.dart --reporter expanded
+```
+
+Los recorridos cubren:
+
+1. Acceso, publicación de una solicitud y cierre de sesión del cliente.
+2. Cotización de una solicitud publicada por un negocio.
+3. Aceptación del acuerdo, pago simulado del adelanto, cancelación y devolución.
+4. Producción, saldo final, entrega y confirmación de recepción.
+5. Publicación sin respuesta del servidor: queda en cola local y se reintenta.
+
+El escenario 5 ya pasa; los otros cuatro están en estabilización (esperas del binding en vivo) y todavía no forman parte del workflow, para no bloquear los cambios mientras se corrigen.
+
+El workflow `.github/workflows/ci.yml` repite en cada `push`, `pull request` o ejecución manual: `flutter analyze`, `flutter test` y `npm test` de `backend-tests/` sobre PostgreSQL aislado.
+
+Estas pruebas no sustituyen la verificación física: cámara, GPS, notificaciones push, tareas en segundo plano, empaquetado Android y latencia real se comprueban en un dispositivo. Las reglas comerciales autoritativas siguen validándose con las pruebas PostgreSQL del backend.
 
 ## Compilación y firma
 
