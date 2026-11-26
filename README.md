@@ -229,9 +229,10 @@ lib/
     └── requests/             Edición de solicitudes
 
 supabase/                     Migraciones, funciones y programación push
-test/                         Pruebas Dart y Flutter
+test/                         Pruebas Dart/Flutter, soporte y recorridos ampliados
 backend-tests/                Pruebas aisladas de reglas PostgreSQL
 tools/                        Herramientas de preparación y entrega
+.github/workflows/ci.yml       Análisis y pruebas automáticas en GitHub
 ```
 
 ```mermaid
@@ -295,7 +296,7 @@ Realtime actualiza las consultas de la interfaz. Push utiliza un recorrido difer
 | 11: BaaS | Autenticación, base PostgreSQL, almacenamiento y Realtime con Supabase. | [auth](lib/features/auth), [migraciones](supabase/migrations), [app_state.dart](lib/app/app_state.dart). |
 | **13: cámara y GPS/localización** | **Fotos de referencia y punto de entrega con permisos, precisión y confirmación.** | **[hardware_services.dart](lib/core/device/hardware_services.dart), [request_editor.dart](lib/features/requests/presentation/request_editor.dart).** |
 | 14: push y segundo plano | FCM, notificaciones locales y sincronización con WorkManager. | [push_service.dart](lib/core/notifications/push_service.dart), [sync_service.dart](lib/core/background/sync_service.dart), [dispatch-push](supabase/functions/dispatch-push/index.ts). |
-| 15: pruebas, optimización y publicación | Pruebas automatizadas, compresión de imágenes y preparación de APK/AAB firmados. La publicación en tienda requiere su propio proceso. | [test](test), [backend-tests](backend-tests), [build-android.ps1](tools/build-android.ps1). |
+| 15: pruebas, optimización y publicación | Pruebas automatizadas, compresión de imágenes y preparación de APK/AAB firmados. La publicación en tienda requiere su propio proceso. | [test](test), [backend-tests](backend-tests), [CI](.github/workflows/ci.yml), [build-android.ps1](tools/build-android.ps1). |
 | 16: sustentación del proyecto | Demostración del flujo entre cliente y negocio, con explicación de teoría, hardware y arquitectura. | Video y evidencias del equipo. |
 
 Las semanas de evaluación no representan funcionalidades adicionales. La tabla indica dónde se aplican los contenidos; la demostración debe acompañarse con evidencias de funcionamiento.
@@ -318,9 +319,33 @@ npm test
 cd ..
 ```
 
-La revisión del 25/11/2026 ejecutó **51 pruebas Flutter y 15 pruebas SQL aisladas**, todas aprobadas. El análisis encontró un import innecesario en un archivo de pruebas. Consulta los [registros y resultados](docs/evidencias/RESULTADOS_PRUEBA.txt).
+La revisión del 25/11/2026 ejecutó **51 pruebas Flutter y 15 pruebas SQL aisladas**, todas aprobadas. Los [registros adjuntos](docs/evidencias/RESULTADOS_PRUEBA.txt) corresponden al commit `48984c1`. El import innecesario registrado entonces fue corregido posteriormente en `main`.
 
 Las pruebas incluyen dinero y estados, HTTP/JSON, separación entre cuentas, persistencia, cola, sesión segura, formularios y reglas comerciales. Las pruebas de PostgreSQL usan PGlite y preparan infraestructura de prueba; no se conectan al backend del producto. Las pruebas del editor usan dobles de cámara y ubicación.
+
+### Automatización y recorridos ampliados
+
+`test/walkthrough_manual.dart` contiene cinco recorridos de integración que montan la app real (`EncargaloApp`) contra `test/support/fake_backend.dart`: un backend Supabase simulado con Auth, PostgREST y RPC, SQLite en memoria y preferencias en memoria. No requiere emulador, cuentas ni claves. Se ejecuta con:
+
+```powershell
+flutter test test/walkthrough_manual.dart --reporter expanded
+```
+
+Los recorridos cubren:
+
+1. Acceso, publicación de una solicitud y cierre de sesión del cliente.
+2. Cotización de una solicitud publicada por un negocio.
+3. Aceptación del acuerdo, pago simulado del adelanto, cancelación y devolución.
+4. Producción, saldo final, entrega y confirmación de recepción.
+5. Publicación sin respuesta del servidor: queda en cola local y se reintenta.
+
+Según el estado documentado por el equipo en `main`, el escenario 5 ya pasa y los otros cuatro siguen en estabilización por las esperas del binding en vivo. Este archivo se ejecuta explícitamente y todavía no forma parte del workflow; no se considera una batería completa aprobada.
+
+El workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml) ejecuta en cada `push`, `pull request` o ejecución manual dos trabajos: análisis y pruebas unitarias/de widgets con Flutter 3.29.3, y pruebas PostgreSQL aisladas con Node.js 22 y PGlite. El recorrido ampliado se incorporará a CI cuando termine de estabilizarse.
+
+Estas pruebas no sustituyen la verificación física: cámara, GPS, notificaciones push, tareas en segundo plano, empaquetado Android y latencia real se comprueban en un dispositivo. Las reglas comerciales autoritativas siguen validándose con las pruebas PostgreSQL del backend.
+
+### Comprobación en dispositivo
 
 Para comprobar las funciones del dispositivo, realiza además este recorrido:
 
@@ -383,7 +408,7 @@ Los informes y registros de la entrega anterior se conservan fuera del repositor
 - Ampliar la consulta local de pedidos y cotizaciones cuando no haya conexión.
 - Renovar enlaces de imágenes caducados y ofrecer reintento en el visor.
 - Unificar la cobertura del catálogo territorial y la búsqueda de referencias.
-- Añadir pruebas de integración del flujo completo y ejecución automática en GitHub.
+- Estabilizar los cuatro recorridos ampliados pendientes de `test/walkthrough_manual.dart` e incorporarlos después al workflow de GitHub existente.
 - Facilitar el inicio desde una copia limpia: versión de SDK fijada, configuración de firma para desarrollo y herramientas adaptables a otro backend.
 - Completar el video, las evidencias en teléfono físico y la documentación del proceso de publicación.
 
@@ -394,3 +419,4 @@ Para proponer un cambio, crea una rama, explica el problema y adjunta cómo lo v
 Para reportar un error, indica versión de la aplicación, dispositivo, pasos, resultado esperado y resultado observado. Añade una captura si ayuda a reproducirlo.
 
 El catálogo territorial está basado en `peru-code-dev/ubigeo-peru`; su licencia se incluye en [assets/locations/LICENSE.txt](assets/locations/LICENSE.txt). La búsqueda y el mapa web utilizan OpenStreetMap/Nominatim con su atribución. La licencia del catálogo corresponde a ese recurso; el repositorio todavía no contiene un archivo de licencia general del proyecto.
+
