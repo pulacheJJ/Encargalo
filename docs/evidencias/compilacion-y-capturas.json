@@ -1,0 +1,121 @@
+{
+  "source_commit": "48984c193a966ae24d0d3c09ef24d34d12e7f8fd",
+  "dart_files": 33,
+  "application_source_changes": [],
+  "apk_sha256": "ce3c32d52cadc51ad2483e1f4f5c5f5c7d6c369998cb5fe443876d1596b3e4dd",
+  "apk_bytes": 81039256,
+  "build_type": "debug",
+  "architecture": "x86_64",
+  "flutter": "3.29.3",
+  "dart": "3.7.2",
+  "flutter_engine_abis": [
+    "x86_64"
+  ],
+  "capturas": [
+    {
+      "archivo": "01-acceso.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "14fc29be0ad6ae23d198183c5ab388191639a11dbc71e8ffbc7be635d94a1cb5"
+    },
+    {
+      "archivo": "02-inicio-cliente.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "1230eea749fe376f863253e84895d0ce1ef731fc09a0055c5100bfd4fc89d4fa"
+    },
+    {
+      "archivo": "03-camara-emulada.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK release publicada v1.1.0 (1.1.0+4)",
+      "sha256": "a488b9e8df9bd2a1e69103c6e5eeb5941f721ec90ecefce4a0b2003ed5594909"
+    },
+    {
+      "archivo": "04-ubicacion-simulada.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK release publicada v1.1.0 (1.1.0+4)",
+      "sha256": "a950ee874bf3a0a6da116fc000b9344e59d860dc8338c641a5a7c6165dc49442"
+    },
+    {
+      "archivo": "05-borrador-reabierto.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK release publicada v1.1.0 (1.1.0+4)",
+      "sha256": "49178aa3177e5a5a2e7e378d13c71c147a308d7e391a18534f8cddbdc1442a69"
+    },
+    {
+      "archivo": "06-revision-solicitud.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK release publicada v1.1.0 (1.1.0+4)",
+      "sha256": "d8701d9ebb898f95c06da3f42364b7b3be3c55db08a97a97e1b32b013c938f5e"
+    },
+    {
+      "archivo": "07-inicio-negocio.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "2009fd4fd4d222da5764b4776d2b5abe2ac27838729296bbfd4ee8277df87a4f"
+    },
+    {
+      "archivo": "08-solicitud-vista-negocio.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "e70b40eccbba8b47a2802c622dd0ebb64051f776fc775bc34ce5343ddb05b495"
+    },
+    {
+      "archivo": "09-cotizacion.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "f5e163ba22e813e9bf82391d2b0e59371b2867370028b697577636d4305fed1d"
+    },
+    {
+      "archivo": "10-cotizacion-recibida.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "eef122fe087760c182c5f74e4f6d7100ef2714cdbc3bff71a908c7dbd1fbc1f6"
+    },
+    {
+      "archivo": "11-pedido-confirmado.png",
+      "dimensiones": [
+        900,
+        1600
+      ],
+      "origen": "APK debug compilada en esta revision",
+      "sha256": "e65d822e9bca10e9987044763125a438830deef8b90c3e99e2ef26c569a9b3a6"
+    }
+  ],
+  "emulator": {
+    "android": "15",
+    "api": 35,
+    "display": "900x1600",
+    "graphics_debug": "Skia; enable-impeller=false"
+  }
+}

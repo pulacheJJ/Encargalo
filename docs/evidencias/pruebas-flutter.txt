@@ -1,0 +1,70 @@
+00:00 +0: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart
+00:00 +0: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: Confirmación RPC admite registro o colección de un registro y rechaza una forma ambigua
+00:00 +1: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: Una operación de otra cuenta no utiliza el nuevo JWT
+00:00 +2: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: GET autenticado y JSON real
+00:00 +3: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 401 se distingue y no se marca éxito
+00:00 +4: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 403 se distingue y no se marca éxito
+00:00 +5: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 404 se distingue y no se marca éxito
+00:00 +6: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 409 se distingue y no se marca éxito
+00:00 +7: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 429 se distingue y no se marca éxito
+00:00 +8: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: HTTP 500 se distingue y no se marca éxito
+00:00 +9: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: JSON inválido produce fallo recuperable
+00:00 +10: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/api_test.dart: Timeout conserva error recuperable
+00:00 +11: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/commerce_repository_test.dart
+00:04 +11: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/commerce_repository_test.dart: Pago incierto conserva operación persistente al reabrir repositorio
+00:05 +12: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/commerce_repository_test.dart: Asignación transaccional de operación no duplica identificadores pendientes
+00:05 +13: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/configuration_test.dart
+00:33 +13: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/configuration_test.dart: Configuración pendiente sin login ficticio a 360.0 px y texto ampliado
+00:35 +14: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/configuration_test.dart: Configuración pendiente sin login ficticio a 390.0 px y texto ampliado
+00:35 +15: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/configuration_test.dart: Configuración pendiente sin login ficticio a 430.0 px y texto ampliado
+00:35 +16: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/database_lifecycle_test.dart
+01:08 +16: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/database_lifecycle_test.dart: Control: singleton reproduce el cierre compartido observado
+01:08 +17: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/database_lifecycle_test.dart: Cerrar un worker no cierra SQLite de la pantalla abierta
+01:09 +18: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/database_lifecycle_test.dart: Cerrar FCM y sincronizacion conserva borrador, cola y deduplicacion
+01:09 +19: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/database_lifecycle_test.dart: Cerrar pantalla no invalida la conexion de un worker activo
+01:09 +20: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/domain_test.dart
+01:11 +20: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/domain_test.dart: Adelanto o retención admite cero decimal sin permitir total cero
+01:11 +21: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/domain_test.dart: Moneda exacta sin punto flotante
+01:11 +22: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/domain_test.dart: Contrato local conserva fotos y GPS, remoto no expone rutas del teléfono
+01:11 +23: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/domain_test.dart: Transiciones por rol no permiten saltos en la interfaz
+01:11 +24: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_layout_test.dart
+01:16 +24: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_layout_test.dart: Formulario con 50 borradores fixture, ancho 360.0 y texto ampliado
+FORMULARIO_FIXTURE: ancho=360.0; 50 borradores SQLite FFI insertados/consultados en 126 ms; edición sin excepción. No es medición en Android.
+01:20 +25: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_layout_test.dart: Formulario con 50 borradores fixture, ancho 390.0 y texto ampliado
+FORMULARIO_FIXTURE: ancho=390.0; 50 borradores SQLite FFI insertados/consultados en 74 ms; edición sin excepción. No es medición en Android.
+01:21 +26: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_layout_test.dart: Formulario con 50 borradores fixture, ancho 430.0 y texto ampliado
+FORMULARIO_FIXTURE: ancho=430.0; 50 borradores SQLite FFI insertados/consultados en 65 ms; edición sin excepción. No es medición en Android.
+01:21 +27: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_layout_test.dart: Formulario con 50 borradores fixture, ancho 720.0 y texto ampliado
+FORMULARIO_FIXTURE: ancho=720.0; 50 borradores SQLite FFI insertados/consultados en 115 ms; edición sin excepción. No es medición en Android.
+01:22 +28: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_test.dart
+01:42 +28: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/editor_test.dart: Dobles de hardware: cancelación, rechazo, tres fotos, confirmación GPS y reapertura
+01:42 +29: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/first_login_test.dart
+01:45 +29: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/first_login_test.dart: Primer ingreso abre cuenta sin esperar FCM ni un segundo evento
+01:46 +30: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/image_test.dart
+01:49 +30: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/image_test.dart: Compresión medida con fixture generado, no fotografía real
+IMAGEN_FIXTURE: original=977322 bytes 2400x1800; preparada=335550 bytes 1600x1200 JPEG, sin EXIF
+01:50 +31: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart
+01:59 +31: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart: CRUD y separación entre propietarios
+02:00 +32: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart: Cola: idempotencia local, lease entre dos workers, no confirmar ante fallo
+02:00 +33: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart: Eventos push se deduplican de forma persistente
+02:00 +34: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart: Cotización offline usa snapshot y operación estable, no duplica y conserva borrador al detener
+02:00 +35: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/local_database_test.dart: Migración SQLite v1 conserva ID, propietario y referencia inválida sin publicarla
+02:03 +36: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart
+02:27 +36: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio cliente: 360.0px, texto 130%, datos fixture
+02:30 +37: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio negocio: 360.0px, texto 130%, datos fixture
+02:30 +38: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio cliente: 390.0px, texto 130%, datos fixture
+02:30 +39: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio negocio: 390.0px, texto 130%, datos fixture
+02:31 +40: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio cliente: 430.0px, texto 130%, datos fixture
+02:31 +41: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Inicio negocio: 430.0px, texto 130%, datos fixture
+02:31 +42: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Alta separada usa datos de contacto y catálogo real, sin sesión ficticia
+02:32 +43: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/redesign_layout_test.dart: Ubigeo dependiente reinicia provincia y distrito al cambiar región
+02:33 +44: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/secure_session_test.dart
+02:53 +44: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/secure_session_test.dart: Migra sesión después de confirmar escritura segura; conserva preferencias
+02:54 +45: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/secure_session_test.dart: Un fallo del almacén seguro no borra la sesión anterior
+02:54 +46: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/secure_session_test.dart: La sesión segura vigente no se sustituye por una copia antigua
+02:56 +47: loading C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/session_and_cache_test.dart
+03:05 +47: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/session_and_cache_test.dart: Eventos de la misma sesión comparten una carga; otra cuenta no
+03:05 +48: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/session_and_cache_test.dart: Carga fallida puede reintentarse sin reutilizar el fallo
+03:05 +49: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/session_and_cache_test.dart: Caché agrupa consultas y respeta expiración e invalidación
+03:05 +50: C:/Users/LENOVO/Documents/Codex/2026-11-07/nec/work/encargalo_ejecucion/test/session_and_cache_test.dart: Respuesta anterior a invalidación no rellena caché de otra sesión
+03:05 +51: All tests passed!
